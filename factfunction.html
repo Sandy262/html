@@ -1,0 +1,17 @@
+<script>
+    function fact(n){
+    var f=1;
+    for(i=n;i>=1;i--){
+        f=f*i;
+    }
+    return f;
+}
+var a=+prompt();
+var b=+prompt();
+var c=a-b;
+var ncr;
+ncr=(fact(a))/(fact(b)*fact(c))
+document.write("ncr is "+ncr);
+npr=(fact(a))/(fact(c))
+document.write(" npr is "+npr)
+</script>

@@ -1,0 +1,66 @@
+<script>
+    var O1={
+        title:"welcome",
+        Name:"Sandeep Kumar"
+           }
+           console.log(O1)
+           function employee(){
+            this.title="welcome",
+            this.Name="Sanjay Kumar"
+           }
+           //this is a keyword points to the current object
+           var em1=new employee();
+           console.log(em1)
+           function employee1(){
+            this.title="welcome",
+            this.Name="Jogender Babu"
+           }
+           var em2=new employee1();
+           console.log(em2)
+           function employeedetails(name, age, place){
+            this.Name=name,
+            this.Age=age,
+            this.Place=place
+           }
+           var em3=new employeedetails("vicky", "36", "hyderabad")
+           console.log(em3)
+           var currentdate = new Date()
+           console.log(currentdate)
+           console.dir(currentdate)
+           var birthtime = new Date("07/13/1991")
+           console.log(birthtime)
+           console.dir(birthtime)
+           console.log((birthtime.getTime())/(1000*60*60*24*365))//millisecondsgetTime(), age is calculated from 1970 Jan 1970 00:00:00
+           console.log((currentdate-birthtime)/(1000*60*60*24*365))//age calculated in years
+           function empdets(n,d,p){
+            this.name=n,
+            this.dob=d,
+            this.place=p
+           }
+           var em4= new empdets("Shravani","08/14/1993","Karimnagar")
+           console.log(em4)
+           var ageofperson=(((new Date().getTime())-(new Date(em4.dob).getTime()))/(1000*60*60*24*365))
+           console.log(ageofperson)
+           //encapsulation:wrapping up of data and methods in a single unit. encapsulation is  nothing but object creation
+           //constructor  function bind data and methods together
+           function employeeage(f,b,l){
+            this.fullname=f,
+            this.birthdate=b,
+            this.livingstation=l,
+            this.getAge=function(){
+                var ct=new Date().getTime()
+                var bt=new Date(this.birthdate).getTime()
+                console.log((ct-bt)/(1000*60*60*24*365))
+                return(ct-bt)/(1000*60*60*24*365)
+            }
+           }
+           //constructor  function bind data and methods together
+           var em5= new employeeage("Samala Sandeep Kumar","07/13/1990","Khammam")
+           console.log(em5,em5.getAge())
+           //constructor  function bind data and methods together
+           var ar=[1,2,3,4,5,6,7,8,9,10]
+           console.dir(ar)
+           var br = new Array(10,9,8,7,6,5,4,3,2,1)
+           console.log(br)
+           console.dir(br)
+</script>
