@@ -1,0 +1,38 @@
+<script>
+    //this points to window object
+    console.log(this)
+    //in function also this points to window object
+    function abc(){
+        console.log(this)
+    }
+    abc();
+    //if we call with new instance, then this inside the constructor function will point to the empty object, not window object
+    //This step will be performed initially automatically when new instance is created
+    //second step is manam em cheppakundaane return kuda avuthundi, this will be automatically returned from the constructor function
+    function Employee(n,d,p){
+        //this is pointed to empty object automatically
+        //this ane pointer empty object ni point chesthundi
+        this.name=n;
+        this.dob=d;
+        this.place=p;
+        this.getAge=function(){
+            var emp1t=(new Date(this.dob)).getTime();
+            var ct1=(new Date()).getTime();
+            console.log((ct1-emp1t)/(1000*60*60*24*365))
+        }
+        //return this, this action also performed automatically when new instance is created, new ane keyword tho specialgaa call chesinappudu matrame
+    }
+    Employee.prototype.company="Edupoly"//creation
+    //instance object
+    var em1=new Employee("Sandeep Kumar","07/13/1991", "Warangal")
+    var em2=new Employee("Sanjay Kumar","08/11/1993", "Warangal")
+    console.log(em1)
+    console.log(em2)
+    //console.log(em1.getAge())
+    //em1.company="vlr technologies"//modification, it will result in creation of another property, won't change value inside prototype
+    // ikkada modify chesetappudu em1.comnpany ante kotha property ni create chesthundi, prototype ki point avvadu
+    em1.__proto__.company="Biscuit solutions"
+    console.log(em1.company)
+    console.log(em2.company)
+    //eppudaithe em1.getAge() antaamo appudu this ane ponter em1 object ni point chesthundi
+</script>

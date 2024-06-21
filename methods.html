@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //constructor way of creating array
+        var ar =new Array(1,3,5,7,9,2,4,6,8)
+        //this is happening in the background, array is the instance object of array constructor
+        //array values, property, methods are bind
+        console.log(ar instanceof Array)
+        console.log(ar instanceof Object)
+        console.log(ar)
+        //short hand way of creating an array
+        var br=[10,9,8,7,6,5,4,3,2,1,0]
+        console.log(br instanceof Array)
+        console.log(br instanceof Object)
+        console.log(br)
+        var cr=100;
+        //cr lopala oka instance undi object ledu
+        //primitive data types are not an instance of any objects, until unless we create them as new instances(example: int,string) 
+        console.log(cr instanceof Array)
+        console.log(cr instanceof Object)
+        //variable lo object unda leda anedi instanceof keyword tho telsukovachu
+        console.log(cr)
+        var ob1={firstname:'sandeep',age:'29'}
+        console.log(ob1 instanceof Object)
+        console.log(ob1 instanceof Array)
+        console.log(ob1 instanceof Window)
+        console.log(ob1)
+        var ob2="sandeep"
+        console.log(ob2 instanceof String)
+        var ob3=400
+        console.log(ob3 instanceof Number)
+        var ob4=new Number(400)
+        console.log(ob4 instanceof Number)
+        var s2=new String("deva")
+        console.log(s2 instanceof String)
+        var Number=101;
+        console.log(isNaN(Number))       
+        //array.isarray      
+</script>
+</body>
+</html>

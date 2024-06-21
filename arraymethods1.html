@@ -1,0 +1,40 @@
+<script>
+    var br=[10,20,30,40,50,60,70]
+    console.log(br.slice(2,5))
+    console.log(br)
+    //slice from 2nd index to (5-1)index
+    //slice won't change the existing array, it will return array, which is sliced from original array
+    //duplicating an array
+    var ar =[]
+    for(var i=0; i<=br.length-1;i++){
+        ar[i]=br[i]
+    }
+    //duplicating array using for loop
+    console.log(ar)
+    ar[3]=87
+    console.log(ar)
+    console.log(br)
+    //duplicating array using concat method
+    //concat returns new array
+    var cr=br.concat([]);
+    console.log(cr)
+    cr[3]=7
+    console.log(cr)
+    console.log(br)
+    //duplicating an array using slice method
+    dr=br.slice(0,br.length)
+    //0th index nundi start array length varaku unna index values annii copy avythayi
+    er=br.slice(0)
+    //0th index nundi start ayyi entire array length elements anni slice avuthayi
+    console.log(dr)
+    console.log(er)
+    var fr=[1,2,3,4,5,6,7,8,9,10]
+    var gr=[1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+    console.log(fr.reverse())
+    console.log(fr)
+    //original array gets modifies with reverse() method
+    console.log(gr.toReversed())
+    console.log(gr)
+    //original array won't get modified
+    //creates new array which is in reversed order to the original array
+</script>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //static methods
+        //konni methods ni instances tho kakunda, constructor functions tho or class tho vaadukovachu alanti methods ni static methods antaaru
+        //konni methods ni objects lekunda vaadukovachu alanti vatini static methods antaaru
+        //example array.isarray(), array.from()--> oka string isthe aa string ni vidagotti array laa marusthundi
+        console.log(Array.from("two"))
+        console.log(Number.isNaN(234))
+        console.log(Array.isArray([1,2,3]))
+        console.log(Array.isArray(1,2,3))
+        //set of individual values isthe annintini kalipi array laaga isthundi Array.of() method
+        //at() gives value at particular index, sometimes we may not use square boxes to findout index value
+        var ar=[9,8,7,6,5,4,3,2,1]
+        console.log(ar.at(3))
+        console.log(Array.of('from',2,'hi',.3))
+        console.log(ar[3])
+        console.log(ar.at(-3))
+        //negative index values venaka nundi start avthayi -1 nundi at() lo
+        console.log(ar[-3])//undefined
+        //we cannot use negative index like above, if we want to go with square brackets
+        //direct two arrays ni kalipi kotha array ga create cheyyadaniki + vadithe avi string ga marathayi
+        //anduke ala rendu kalipi kotha array create cheyyadaniki concat() ane method vadatham
+        var dr=[1,2,3]
+        var er=[4,5,6]
+        fr=dr+er
+        console.log(fr)
+        //to combine two arrays we use concat() method
+        console.log(dr.concat(er))
+        //dr won't get modified here
+        console.log(dr)
+        //copywithin() copies the element values within an array, according to the passed index values
+        var array1=[1,2,3,4,5,6,7,8,9,10]
+        console.log(array1.copyWithin(0,3))//0th index id being copied from 3 index to entire array
+        //0th index is being copied from 3rd index value
+        console.log(array1.copyWithin(0,4,7))
+        //4th index value to the 6th(7-1) index is being copied(7-4=3 values) is copied from 0th row
+        console.log(array1)//[8, 9, 10, 7, 8, 9, 10, 8, 9, 10]
+        //array gets modified with copywithin() method
+        //includes() is not a es5 property it is es7 property
+        //the most latest included method, i.e., 2018
+        //we can check whether, the given value there in array or not?
+        console.log(array1.includes(10))
+        //adi raka mundu indexof() method vadevallam, value unte array lo index print avuthundi ledante negative value "-1" print avuthundi
+        console.log(array1.indexOf(10))
+        //join() method returns string with delimiter(,) makes the array into the string.
+        //indexof() return type is integer(Number is return type), includes() return type is boolean true or false
+        var array2=array1.join()
+        console.log(array2)//8,9,10,7,8,9,10,8,9,10
+        console.log(array1.join("&"))//8&9&10&7&8&9&10&8&9&10
+        console.log(array1.join(" "))//8 9 10 7 8 9 10 8 9 10
+        console.log(array1.join(""))//8910789108910
+        //spaces numbers madyana raavoddu ante empty string ivvaali
+        //return type of concat is an array
+        console.log(array1.keys())
+        console.log(array1.lastIndexOf(10))//9
+        //push() will add an value to the end of array
+        //push will return last index value of added value which is 11 in below example, which is nothing but length of an array
+        var br=ar.push(55)
+        console.log(ar)//[9, 8, 7, 6, 5, 4, 3, 2, 1, 55]
+        console.log(array1.push(55))//11//last index//length of an array
+        //we can push multiple elements as well like push(55,56)
+        //if we don't give anything inside push, nothing  is going to be added in the array(not undefined)
+        var array11=[10,20,30]
+        console.log(array11.pop())//pop() lo em ivvakapoina, -ve value, +value ichinaa only last element delete avuthundi
+        console.log(array11)
+        //return type of pop is deleted element
+        //reverse changes original array, reurn type of reverse is reversed array
+        //original array gets changed in the reverse method
+        console.log(array11.reverse())//[20, 10]
+        //shift will remove an element from starting
+        var array12=[10,21,32,43,54,65,76,87,98,109]
+        var a1=array12.shift()
+        console.log(a1)//10//return type is removed value
+        console.log(array12)//[21, 32, 43, 54, 65, 76, 87, 98, 109]
+        //unshift() method lopala unna array values annintini pakkaki jaripi, starting lo ee value ni add chesthundi, edaithe manam unshift lo ichamo
+        //unshift increases array length, array elements index value changes
+        console.log(array12.unshift(12))//10
+        //unshift() method return type is length of an array similar to push()
+        console.log(array12)//[12, 21, 32, 43, 54, 65, 76, 87, 98, 109]
+        //unshift also changes original array
+        //splice() method lo splice(3,2) ila ivvdam valla 3rd element nundi 2 elements delete aipothayi, in case if delete chesaaka elements emaina add cheyyalanukunte splice(3,2, 45,56,67) ikkada 3rd element nundi 2 values remove ayyaka next unna two values ante 45,56,67 same array ki add kuda avuthayi, ekkadaithe remove ayyayo akkade add avythayi
+        //original array kuda change avuthundi, we can remove values from specified index
+        console.log(array12.splice(3,2))//[43, 54]
+        //splice returns deleted or added elements array
+        console.log(array12)//[12, 21, 32, 65, 76, 87, 98, 109]
+        console.log(array12.splice(2,0,43,54))//[]
+        console.log(array12)//[12, 21, 43, 54, 32, 65, 76, 87, 98, 109]
+        //To remove duplicate array elements using splice
+        var array13=[1,2,3,4,5,6,1,2,3]
+        for(var i=0;i<=array13.length-1;i++){
+            for(j=i+1;j<=array13.length-1;j++){
+                if(array13[i]==array13[j]){
+                    array13.splice(j,1)
+                }
+            }
+        }
+        console.log(array13)//1, 2, 3, 4, 5, 6]
+    </script>
+</body>
+</html>

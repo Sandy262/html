@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Employee(a,b,c){
+            this.name=a;
+            this.dob=b;
+            this.place=c;
+            return this;
+        }
+        var em1=Employee.call({}, "praveen", "08/12/1991", "karimnagar")
+        console.log(em1)
+        //without new keyword object instance is created
+        //apply kuda similar, but akkada data ni oka object lo combine chesi pampisthaam, typically in an array
+    </script>
+    
+</body>
+</html>

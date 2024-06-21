@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //the bind() method of a function instances creates a new function, call returns whatever we want to return, bind returns a new function
+        //bind will bind an object to a function
+        var ob1={
+            name:'ravi',
+            dob:'8/11/1993'
+        }
+        var ob2={
+            name:'sanju',
+            dob:'07/13/1991'
+        }
+        function getAge(){
+            var dt1=((new Date(this.dob)).getTime())
+            var ct1=(new Date().getTime())
+            console.log((ct1-dt1)/(1000*60*60*24*365))
+        }
+        var ob1getAge=getAge.bind(ob1)
+        var ob2getAge=getAge.bind(ob2)
+        ob1getAge();
+        ob2getAge();
+    </script>
+</body>
+</html>

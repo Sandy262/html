@@ -1,0 +1,19 @@
+<script>
+    function Person(m,g){
+        //this.mobilenum=m;
+        //this.gender=g
+    }
+    function Employee(n,d,p,m,g){
+        this.name=n;
+        this.dob=d;
+        this.place=p;
+        Person.prototype.mobilenum=m;
+        Person.prototype.gender=g;
+        //ee 2 details main Employee object prototypelo untaayi
+    }
+    Employee.prototype=Person.prototype;
+    //ikkada mobilenum, gender anevi ee instance properties avuthayi, not prototype properties
+    //so anni objects instances ki common gaa ravali ante pailaga function person lo m, g ni petkovaddu
+    var em1=new Employee("Sandeep","07/13/1991","Adilabad","90456789","male")
+    console.log(em1)
+</script>

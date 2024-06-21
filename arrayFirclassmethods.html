@@ -1,0 +1,180 @@
+<script>
+    //methods which will accept functions as arguments are called as first class methods
+    var ar=[1,2,3,4,5,6,7,8,57,67,34,36,27,9,10, 100,10000,10001]
+    var x=ar.every(function(){console.log("HI")});
+    console.log(x)
+    //determines whether all the members of an array satisfy the specified(mentioned in the function) test or not
+    //every means anniiii, once failed, it will stop execution, returns false boolean value
+    //every returns boolean value true or false
+    var y=ar.every(function(a){
+        console.log("hi")
+        if(a%2==0){
+            return true
+        }
+        else{
+            return false
+        }
+    })
+    console.log(y)
+    //ilanti test--> filter, some lo kuda untundi
+    //lopala unna function true return chesthundaa false return chesthundaa anna danni batti every anedi value return chesthundi
+    var z=ar.some(function(a){
+        console.log("HI")
+        if(a%2==0){
+            return true
+        }
+        else{
+            return false
+        }
+    })
+    var a=ar.filter(function(a){
+        console.log("HI")
+        if(a%2==0){
+            return true
+        }
+        else{
+            return false
+        }
+    })
+    console.log(a)    
+    //some only checks till the condition becomes true
+    //every checks till first false condition
+    //some checks till first true condition
+    //flipkart lo filters petti search cheyyataniki every ane use case panikosthundi
+    //google search functionality some use case apply avuthundi 
+    //testing functio true return chesthe aagipoyedi some
+    //testing function false return chesthe aagipoyedi every
+    //testing finction true or false return chesinaa aagiponidi filter
+    //filter: testing function true ainappudu unna 'a' values, ante array elements annintini oka array lo ki save cheskuntundi
+    //aaa array ni paina "a" variable ki assign cheskuntundi
+    //filter method basically returns the array with the values which are the array values when the test function becomes true
+    var b=ar.filter(function(a){
+        if(a>10&&a<=99){
+            return true
+        }
+      else{
+        return false
+      }  
+    })
+    console.log(b)
+    //find method: 1st time true aina value return chesthundi anthe, no further execution
+    //find method of an array instances return the first element in the provided array that satisfies the provided testing function
+    //If no values satisfy the testing function, undefined is returned
+    //first even number of this array
+    var c=ar.find(function(a){
+        if(a%2==0){
+            return true
+        }
+        else{
+            return false
+        }
+    })
+    console.log(c)
+    //findIndex() method will return index of the value which satisfied condition
+    var d=ar.findIndex(function(a){
+        if(a%2==1){
+            return true
+        }
+        else{
+            return false
+        }
+    })
+    console.log(d)
+    //findlast--> idi last nundi find cheskuntuu vasthundi, instead of starting
+    //findlastindex kuda same find findindex laage but last nundi check chesthundi
+    var e=ar.findLast(function(a){
+        if(a%2==0){
+            return true
+        }
+        else{
+            return false
+        }
+    })
+    console.log(e)
+    var f=ar.findLastIndex(function(a){
+        if(a%2==0){
+            return true
+        }
+        else{
+            return false
+        }
+    })
+    console.log(f)
+    var cr=[14, 15, [16,17],18,19]
+    var g=cr.flat()//flats into 1 level of array
+    console.log(g)
+    //flat method()-->flatting sub arrays inside an arrow
+    //to flat into the multiple levels, we can pass variable like till how many levels we can flat, to make it proper 2 dimensional array
+    var dr=[14, 15, [16,17,[111,11,[12,13],14]],18,19]
+    var h=dr.flat(3)//flats the 3 levels of Array
+    console.log(h)
+    console.log(dr)
+    //flat won't change original array, it will return new array
+    var tr=[9,8,7,6,5,4,3]
+    var p=tr.forEach(function(a){
+        console.log("pora")    
+        return 'india'
+    }
+    )
+    console.log(tr)
+    console.log(p)
+    //The forEach() method is an iterative method. It calls a provided callbackFn function once for each element in an array in ascending-index order.
+    //Return type of forEach() method is undefined
+    //map creates a new array, won't change existing array
+    //return type of map is new array like concat, slice, filter.
+    var sr=[16,27,38,49,50,6,7,8,9,10,11,12,13,14,15]
+    var qr=sr.map(function(a,i){
+    console.log(a,i)
+    return 'india'
+    })
+    console.log(qr)
+    var mr=sr.map(function(a,i){
+    if(a%2==0){return 'india'}
+    })
+    console.log(mr)
+    //if we won't return anything inside map, undefined value is returned.
+    //map,filter,forEach lo callback function ki 3 arguments untayi
+    //one is value, other is index, other argument is complete array
+    var kr=sr.map(function(a,i,c){
+        console.log(c)
+        return a*2
+    })
+    console.log(kr)
+    //same for forEach, filter
+    //reduce ki either 1 or 2 arguments ivvachu, behaviour depends on number of arguments
+    var lr=[10,20,30,40,50]
+    var vr=lr.reduce(function(a,b){
+        console.log(a,b)
+        return a+b
+        },10)
+        console.log(vr)
+        var or=lr.reduce(function(a,b){
+        console.log(a,b)
+        return a+b
+        },0)//here if second argument passed is zero '0' it is nothing but no argument is passed.
+        console.log(or)
+        var xr=lr.reduce(function(a,b){
+        console.log(a,b)
+        },0)//here if second argument passed is zero '0' it is nothing but no argument is passed.
+        console.log(xr)
+        //duplicate array by using reduce method
+        var bbr=lr.reduce(function(a,b){
+            a.push(b)
+            return a
+        },[])
+        console.log(bbr)
+        var aa=[10,12,20,28,14,12,38,26,50,9]
+        aa.sort()
+        console.log(aa)//string sorting, digit to digit happened here, 9 will be placed last
+        //[10,12,12,14,20,26,28,38,50,9]
+        //perfect sorting can be shown below
+        aa.sort(function(a,b){
+            if(a>b){//compare function logic
+                return 1
+            }
+            else{
+                return -1
+            }
+        })
+        console.log(aa)
+</script>

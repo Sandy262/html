@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function abc(a,b,c){
+            this.avalue=a,
+            this.bvalue=b,
+            this.cvalue=c,
+            console.log("this is edupoly",this)
+            console.log(a,b,c)
+        }
+        console.dir(abc)
+        abc.call({name:'Prasanthi'},10,11,12)
+        //call lo pass chese first argument this loki velthundi
+        //call is a method which will be automatically created to a function as soon as it is defined, which will comes under prototype
+        //generally inside the normal function, this will be pointing to window object
+        abc({name:'Prasanthi'},10,11,12)
+    </script>
+</body>
+</html>

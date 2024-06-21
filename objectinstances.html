@@ -1,0 +1,24 @@
+<script>
+    function Employee(n,d){
+        this.name=n;
+        this.dob=d;
+        this.getDateofbirth=function(){
+            var ct =new Date().getTime();
+            var tt =new Date(this.dob).getTime();
+            //console.log((ct-tt)/(1000*60*60*24*365));
+            return ((ct-tt)/(1000*60*60*24*365));
+        }
+    }
+    var em1=new Employee('Sandeep Kumar','07/13/1991')
+    var em2=new Employee('Sanjay Kumar','08/11/1993')
+    var em3=new Employee('Jogender Babu','06/28/1968')
+    console.log(em1)
+    console.log(em2)
+    console.log(em3)
+    //em1.getDateofbirth()
+    console.log(em1.getDateofbirth())
+    console.log(em2.getDateofbirth())
+    console.log(em3.getDateofbirth())
+    //console.log(em2.getDateofbirth())
+    //console.log(em3.getDateofbirth())
+</script>
