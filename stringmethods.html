@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var s1="sandeep"
+       console.log(s1.length)//7
+       console.log(s1[4])//e
+       //string is an array of characters ['s','a','n','d','e','e','p']
+       //to print the all strings
+       for(i=0;i<=s1.length-1;i++){
+        console.log(s1[i])// s a n d e e p printed in vertical order
+       }
+       //to print all strings in the reverse order from last to first
+       for(i=s1.length-1;i>=0;i--){
+        console.log(s1[i])//p e e d n a s printed in vertical order
+       }
+       var ar=[1,2,3,4,5,6]
+       ar[2]=17
+       console.log(ar)//[1, 2, 17, 4, 5, 6] array is mutable, we can change the values like this
+       //string is immutable
+       var s2="kumar"
+       s2[2]='d'
+       console.log(s2)//kumar //string is immutable //string lo  values change cheyyalemu
+       //reversing a string
+       var s3='jogender'
+       var p=''
+       for(i=s3.length-1;i>=0;i--){
+        p=p+s3[i]
+       }
+       console.log(p)//rednegoj
+       //ade same array ni reverse cheyyalante simple gaa below method lo p ni s ki assign cheseyyali
+       s=p
+       console.log(s)//rednegoj
+       //number ni string ga maarchi kuda reverse cheskovachu
+       var k=4825
+       //deenini reverse cheyyochu string la marchi var k="4825" pettesi paina method malli apllyt cheyyadame
+       var s4="sanjay"
+       //s4.reverse()//string lo reverse method ledu
+       //string ni array laaga marchi appudu reverse apply cheskuntaamu
+       //malli join cheskuntaam
+       //appudu string reverse avuthundi
+       var a1=s4.split("")//
+       console.log(a1)//['s', 'a', 'n', 'j', 'a', 'y']
+       a2=a1.reverse()//
+       console.log(a2)//['y', 'a', 'j', 'n', 'a', 's']
+       a3=a2.join("")
+       console.log(a3)//yajnas
+       //chaining
+       a4=s4.split("").reverse().join("")
+       console.log(a4)//yajnas
+       //anchor() method, link gaa marusthundi
+       var s='edupoly'
+       console.log(s.anchor())//<a name="undefined">edupoly</a>
+       console.log(s.anchor("https://edupoly.in"))//<a name="https://edupoly.in">edupoly</a>
+       console.log(s.at(3))//p 3rd index value will be displayed
+       console.log(s.at(-3))//o last from last index as -1
+       console.log(s.charAt(3))//p -ve index cannot be passes in charAat()
+       console.log(s.charCodeAt(3))//112 ASCII value of the 3rd index character
+       //ascii-american standard code for information interchange
+       var s8='@'
+       console.log(s8.charCodeAt(0))//64
+       //endswith() method tells whether a string ends with particular word or not
+       var s9="I am Sandeep Kumar"
+       console.log(s9.endsWith('Kumar'))//true
+       console.log(s9.endsWith('Kumar', 18))//we can give end position also in the arguments, like word ending index value should be given here
+       var s5="A topic sentence is a precise statement that reflects the main idea of the paragraph. It should be carefully written as it will show the reader what you are going to talk about. Words chosen for this should not be cluttered and ambiguous as readers will decide to read further based on this. It is not necessary to write the topic sentence at the beginning of the paragraph. It can be put anywhere, as long as it reflects the main topic. For instance, if you mention that you are going to talk about the advantages of using the hand sanitizer, then in supporting sentence you should only talk about advantages, not the features or anything else."
+       //counting number of words, letters, sentences
+       var k=s5.split("")
+       console.log(k)//anni letters including spaces , . are added into an array.
+       //['A', ' ', 't', 'o', 'p', 'i', 'c', ' ', 's', 'e', 'n', 't', 'e', 'n', 'c', 'e', ' ', 'i', 's', ' ', 'a', ' ', 'p', 'r', 'e', 'c', 'i', 's', 'e', ' ', 's', 't', 'a', 't', 'e', 'm', 'e', 'n', 't', ' ', 't', 'h', 'a', 't', ' ', 'r', 'e', 'f', 'l', 'e', 'c', 't', 's', ' ', 't', 'h', 'e', ' ', 'm', 'a', 'i', 'n', ' ', 'i', 'd', 'e', 'a', ' ', 'o', 'f', ' ', 't', 'h', 'e', ' ', 'p', 'a', 'r', 'a', 'g', 'r', 'a', 'p', 'h', '.', ' ', 'I', 't', ' ', 's', 'h', 'o', 'u', 'l', 'd', ' ', 'b', 'e', ' ', 'c', …]
+       console.log(k.length)//645 number of charachters are there
+       var k=s5.split(" ")
+       console.log(k)//anni words seperate ga array elements laaga vachesthayi
+       //['A', 'topic', 'sentence', 'is', 'a', 'precise', 'statement', 'that', 'reflects', 'the', 'main', 'idea', 'of', 'the', 'paragraph.', 'It', 'should', 'be', 'carefully', 'written', 'as', 'it', 'will', 'show', 'the', 'reader', 'what', 'you', 'are', 'going', 'to', 'talk', 'about.', 'Words', 'chosen', 'for', 'this', 'should', 'not', 'be', 'cluttered', 'and', 'ambiguous', 'as', 'readers', 'will', 'decide', 'to', 'read', 'further', 'based', 'on', 'this.', 'It', 'is', 'not', 'necessary', 'to', 'write', 'the', 'topic', 'sentence', 'at', 'the', 'beginning', 'of', 'the', 'paragraph.', 'It', 'can', 'be', 'put', 'anywhere,', 'as', 'long', 'as', 'it', 'reflects', 'the', 'main', 'topic.', 'For', 'instance,', 'if', 'you', 'mention', 'that', 'you', 'are', 'going', 'to', 'talk', 'about', 'the', 'advantages', 'of', 'using', 'the', 'hand', 'sanitizer,', …]
+       console.log(k.length)//116
+       var k=s5.split(".")//to count the number of sentences
+       console.log(k)
+       //['A topic sentence is a precise statement that reflects the main idea of the paragraph', ' It should be carefully written as it will show the reader what you are going to talk about', ' Words chosen for this should not be cluttered and…readers will decide to read further based on this', ' It is not necessary to write the topic sentence at the beginning of the paragraph', ' It can be put anywhere, as long as it reflects the main topic', ' For instance, if you mention that you are going t…out advantages, not the features or anything else', '']
+       //last oka empty space vasthundi adi remove cheskoni count cheppali, ikkada 7-1=6
+       console.log(k.length)//7 but actual ga 7-1=6
+       //includes() method, oka string lo character undaa ledaa or substring undaa ledaa anedi includes() method dwara chuskovacahu
+       var d="Edupoly"
+       console.log(d.includes("o"))//characters ni eppudu kuda inverted commas lo pass cheyyali
+       //true is returned as output
+       var e="I am the singham"
+       console.log(e.includes("am"))//true
+       //indexof() method gives location of the string
+       console.log(e.indexOf("the"))//5 is the index value of t in "the"
+       var d="Nikhil"
+       var f=d.replace('k','c')
+       console.log(d)//Nikhil replace won't change original string, because string is immutable, but it will return the mutated string or changed string
+       //ikkada first "k" place lo "c" ane character vasthundi 
+       console.log(f)//Nichil
+       //alaa kakundaa annii paina i's replace avvalante replaceAll() method vadali
+       var g=f.replaceAll('i','g')
+       console.log(g)//Ngchgl
+       //slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+       const str = 'The quick brown fox jumps over the lazy dog.';
+       console.log(str.slice(31));// Expected output: "the lazy dog."
+       console.log(str.slice(4, 19));// Expected output: "quick brown fox"
+       console.log(str.slice(-4));// Expected output: "dog."
+       console.log(str.slice(-9, -5));// Expected output: "lazy"
+       //SubStr(), SubString() methods
+       var emp1="SandeepKumarSamala"
+       console.log(emp1.substr(3,7))//deepkum//1st argument index starting value, 2nd argument is nothing but till length of the string index to be copied from 3rd index to 3+7=10
+       //2nd argument is the length of SubStr
+       console.log(emp1.substring(3,7))//deep//1st argument is index value, 2nd argument is till how many index values, we need to go further in this string, here 3 to 7 indexes
+       //2nd Argument is last index value in the string to be copied
+       //2nd argument ivvakapothe 2 kuda same avthayi
+       console.log(emp1.substr(3))//deepKumarSamala
+       console.log(emp1.substring(3))//deepKumarSamala
+       console.log(emp1.substr(-3,7))//ala//ikkada 2nd argument 7 unaa work avvaledu, endukante anni characters levu//from last 3 indexes values towards the end of the string irrespective of second argument
+       console.log(emp1.substring(-3,7))//Sandeep//if -ve value is given in the first argument, index value starts from 0, copies till length provided in the argument
+       //The two parameters of substr() are start and length, while for substring(), they are start and end.
+       //substr()'s start index will wrap to the end of the string if it is negative, while substring() will clamp it to 0.
+       //Negative lengths in substr() are treated as zero, while substring() will swap the two indexes if end is less than start.
+       console.log(emp1.substr(-3))//ala
+       console.log(emp1.substring(-3))//SandeepKumarSamala
+       console.log(emp1.substr(-3,-7))//nothing gets printed here
+       console.log(emp1.substring(-3,-7))//nothing gets printed here//start index is greater than ending index anduke returns 0, nothing gets printed
+       console.log(emp1.substr(-7,-3))//nothing gets printed here
+       console.log(emp1.substring(-7,-3))//nothing gets printed here
+       console.log(emp1.substr(4,-4))//nothing gets printed here//negative values will be considered as 0 in the 2nd argument for substr(), anduke nothing gets printed here
+       console.log(emp1.substring(4,-4))//Sand//if end is less than start, indexes will swap
+       //in substr() 2nd argument is the length of to which we need to copy, in substring( 2nd argument it till which argument level we need to copy
+       //substr lo 1st argument -ve aithe parledu, ade substring lo -ve argument ante zero laaga thiskundi
+       //substring lo -ve indexes swap avvavu anduke -ve indexes print avvatledu, 2 negative unte
+       //slice() method will allow negative indexes
+       console.log(emp1.slice(-7,-3))//Sand
+       console.log(emp1.slice(3,-7))//rSam
+       console.log(emp1.slice(-3,-7))//deepKuma
+       console.log(emp1.substring(7,3))//deep //ikkada if +ve lo 1st value greater aithe indexes swap avuthayi
+       console.log(emp1.substring(3,-7))//San//ikkada first index is positive and greater than second index, kabatti idi substring(0,3) laagaa behave chesthundi
+       //substr() lo second value argument -ve aithe irrespective of 1st argument, nothing gets printed
+       //substring() lo both negative arguments unte em print avvadu
+       //substring() lo if 1st argument is greater than 2nd argument aithe 2 swap avythayi
+       console.log(emp1.substring(7,-3))//Substring(0,7)//Sandeep
+       //toUpperCase()
+       console.log(emp1.toUpperCase())//SANDEEPKUMARSAMALA
+       //Trim()//String ki First lo and last lo unna spaces trim aipothayi
+       var emp12="         Sanjay Kumar Samala         "
+       console.log(emp12.trim())
+    </script>    
+</body>
+</html>
