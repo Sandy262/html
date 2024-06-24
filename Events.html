@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="abc(event)">ChittiBabu</button>
+    <button onclick="abc()" onblur="xyz()">ChittiBabu</button>
+    <button onblur="xyz()">ChittiBabu</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button onclick="bcd(event)">ChittiBabu</button>
+    <button onclick="bcd(event)">RamBabu</button>
+    <button onclick="bcd(event)">SuriBabu</button>
+    <button onclick="bcd(event)">ManchuBabu</button>
+    <button onclick="bcd(event)">PoraBabu</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="text" onkeyup="cde(event)">
+    <br>
+    <br>
+    <input type="text" onkeyup="def(event)">
+    <br>
+    <br>
+    <br>
+    <button onclick="efg(event)">0</button>
+    <br>
+    <br>
+    <br>
+    <button onclick="fgh(event)">0</button>
+    <br>
+    <br>
+    <br>
+    <button onclick="ghi(event)">Clicked 0 times</button>
+<script>
+    //program run program start avvagane danilo unna functions execute ayyi manaki oka output anedi isthundi
+    //oka button click chesinappudu oka function execute avvadam
+    //or oka input box lo raasthunnappudu oka function execute avvadam
+    //oka text box mida tab press chesinappudu oka function execute avvadam
+    //ilanti panulu jaragadiniki event listeners anevi untayi
+    //event, event objects, event listener, even handling, event binding are important topics
+    //Events are things that happen in the system you are programming, which the system tells you about so your code can react to them.
+    //web page lo prathi element ki event listeners untaayi
+    //aa event listerner ki actions/function calls ni bind cheyyali
+    //button ni click chesinappudu matrame abc() anedi call avuthundi
+    //click is event
+    //onclick is event listener
+    //abc() is handler, which handles the things to be performed
+    //onclick ki abc() funcion call ni bind cheyadanni event binding antaaru
+    //ila events ni use cheyyadaanni event handling antaaru
+    //em action jariginappudu em cheyyali annadi define cheyadanni event handling antaaru
+    //focus ni vadileyadanni blur antaaru//tab press chesthuu unte focus change avuthuu untundi
+    //ye event jariginappudu aa event handler call avuthundi, alaa event ki handler ni bind cheyyadame event handling or event binding
+    //events jarigina pratisaari, aa event eppudu jarigindi, ekkada jarigindi alaanti chaala information manaki oka object roopam lo javascript create chesthundi
+    // element per, id, class enti ivanni object lo create ayyuntayi
+    //aa particular object event handler ni event listener ki bind chesina place lo untundi
+    //daanni manam pass cheyyali, daani peru puccaga "event" ayye undali
+    //ye element ni aithe click chesaamo(or event perform chesaamo) aa element reference target lo untundi, innerHTML="ChittiBabu", innerText="ChittiBabu"
+    //system generated actions print ichaka, print complete ayyaka, web page ki print completed ani info isthundi, print event is completed
+    //user generated actions click,blur,keyup etc..
+    //manam user generated and system generated events ni kuda handle cheyyalsi untundi
+    //form events: submit,reset, formdata
+    //asynchronous data fetching: readystatechange, load,loadstart,loadend,error(stages, readystate change avuthuu untundi progress avuthuu unte)
+    //drag 'n' drop, wheel: dragenter,dragleave,drag,drop,wwheel
+    //focus:focus,blur,focusin,focusout
+    //input:change(is a special event)
+    //keyboard:keypress,keydown,keyup
+    //mouse:click,dbclick,mouseover,mouseup,mouseout
+    function abc(ev){
+        console.log("Hello Edupoly",ev)
+    }
+    function xyz(){
+        console.log("Hello Sandeep")
+    }
+    function bcd(ev){
+        //console.log("hi")
+        console.log(ev.target.innerHTML)
+        //TAKING INFORMATION FROM button text where button tag is having opening tag, closing tag
+        //ye button mida click chesthe aa button value vasthundi
+    }
+    function cde(e){
+        console.log(e.target.value)
+        //accessing a value from only open tag elements like textbox, radio button
+    }
+    function def(e){
+        console.log("pora pandi")
+    }
+    function efg(e){
+        e.target.innerHTML=e.target.innerHTML+1
+        console.log(e.target.innerHTML)//01//011//0111------
+        //ikkada manam typecast cheskovali appudu add avuthu vasthundi
+   }    //typecast//e.target.innerHTML=+(e.target.innerHTML)+1 ilaa rayali appudu add ayyi output vasthundi
+   function fgh(e){
+    e.target.innerHTML=+(e.target.innerHTML)+1
+    console.log(e.target.innerHTML)//1//2//3//4//----
+   }
+   var c=0;
+   function ghi(e){
+    c++
+    e.target.innerHTML="Clicked "+c+" times"
+    console.log("Clicked "+c+" times")
+   }
+   //document is nothing but object(which contains properties(which contains url, size), methods)
+   console.dir(document)
+   // html page ni access cheskodaniki document object avasaram
+   // document lo page ki sambandinchina information motha oka object format lo untundi
+   //HTML Page will be saved in the tree structure format, this is called as document object model(DOM)
+  </script>
+</body>
+</html>

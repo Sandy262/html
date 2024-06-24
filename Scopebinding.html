@@ -1,0 +1,29 @@
+<script>
+    //variables, function definitions tho paatu, konni values kuda bind avuthayi, alaa bind ayye values ni closure scope antaaru
+    //execution time lo vache variables function scope lo untaayi
+    //block scope
+    //ee 3 scopes functions ki common
+    //closure scope anedi prathi function ki seperate gaa define ayyi untundi
+    //closure scope lo values unte aa closure scope kanpisthundi, ledante kanpadadu
+    var a=100;
+    {
+        let c=300;//ee variable kinda unna function ki bind avuthundi, this won't come under, global scope, functional scope, only exists inside block, binds to block scope
+    function abc(){
+        var b=200;//lexical scope//functional scope//functional variable
+        b=b-40;
+        c=c-50;
+        console.log(a)
+        console.log(b)
+        console.log(c)//function definition ki bind aina value
+        // anduke each function call ki value update avuthuu untundi
+    }
+    } 
+    //function ni block lo pettina scope global lone untundi function ki, answers emi change avvavu
+    abc();//call stack//70
+    console.dir(abc)
+    a=a-30;
+    abc();
+    abc();//ikkada only function ye execute avuthundi 100-30=70, so a 70 avuthundi, a-30 ane line calculate ayyi malli execute avvadu
+    abc();
+   // console.log(c)//reference error: c is not defined// c is block scope 
+</script>

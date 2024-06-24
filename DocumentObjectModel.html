@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <h2 class="abc">pora babu</h2>
+    <h2>endira naaku idi</h2>
+    <ul>
+        <li>india</li>
+        <li class="abc">Pakistan</li>
+        <li>Nepal</li>
+    </ul>
+    <p class="abc">deva deva mangalam</p>
+    <p id="d1">navvi navvi sachipo</p>
+    <script>
+        console.dir(document)
+        // document lo page ki sambandinchina information motha oka object format lo untundi
+        //HTML Page will be saved in the tree structure format, this is called as document object model(DOM)
+        //document object, page mothanni inner objects object gaa maintain chesthundi, tree structure laaga
+        console.dir(document.body.children[0])
+        console.dir(document.body.children[1])
+        console.dir(document.body.children[2])
+        //ee vidangaa maintain cheyadanni DOM antaaru
+        //to make easier we can select by using id's
+        console.dir(document.getElementById("d1"))
+        //dir ante descriptive  gaa vasthundi
+        console.log(document.getElementsByTagName("h2"))//HTMLCollection(2) [h2, h2]
+        //array lanti datastructure idi//deenini collection antaaru//array ni kuda collection,list,sets,dictionary,map,queue, associative array ani pilusthuntaaru
+        console.log(document.getElementsByClassName("abc"))
+        //HTML Collections anedi array lantidi but array kaadu, endukante deenilo em methods undavu, prototypes is not pointing to array methods
+        var ar=[1,4,7,3,9,2,6]
+        console.log(ar)//(7) [1, 4, 7, 3, 9, 2, 6]//here properties is pointing to array methods
+        console.log(document.querySelectorAll(".abc"))//NodeList(3) [h2.abc, li.abc, p.abc]
+        //NodeList kuda array lantidi but array kaadu
+        //NodeList and HTMLCollections madyalo difference entante, methods are different, Query SelectorAll lo methods ekkuva unnayi, so queryselectorall vadatam better
+        //only queryselector vaadithe, first edi satisfy aithe adokkate pickup cheskoni vasthundi
+        console.log(document.querySelector(".abc"))//<h2 class="abc">pora babu</h2>
+        //eee vidanga html elements ni access cheskovachu
+
+        //color ni Javascript use chesi modify cheyyaali
+        var x=document.getElementById("d1")
+        console.log(x)
+        x.style.color="green"
+        //Node List, HTML Collections lo reference of the HTML Elements untayi
+        //HTML Collections ni For loop ni use chesi elements ni iterate cheskovachu
+        //Node List lo forEach() use chesi elements ni iterate cheskovachu
+    </script>
+</body>
+</html>
