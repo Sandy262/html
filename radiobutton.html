@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="radio" name="Gender" value="Male">:Male &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="Gender" value="Female">:Female &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="Gender" value="Others">:Others &nbsp;&nbsp;&nbsp;
+        <!--value ivvakapothe submit chesinappudu value anedi "on" ani velthundi-->
+        <br>
+        <button onclick="getGender(event)">Show Gender</button>
+        <br>
+        <h1 id="d1"></h1>
+        <script>
+            function getGender(ev){
+                var rs=document.getElementsByName("Gender");//tagname gives html list
+                //console.log(rs)//anni elements nodelist lagga select aipoyi vachesthaayi
+                rs.forEach(function(rel){
+                    if(rel.checked===true){
+                        document.getElementById("d1").innerHTML=rel.value
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>

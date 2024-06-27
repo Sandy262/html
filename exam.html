@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gender" value="Male" onchange="genderChange(event)">Male&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="gender" value="Female" onchange="genderChange(event)">Female&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="gender" value="Others" onchange="genderChange(event)">Others&nbsp;&nbsp;&nbsp;
+    <br>
+    <h1 id="d1"></h1>
+    <script>
+        function genderChange(ev){
+            rs=document.getElementsByName("gender")
+            rs.forEach(function(rel){
+                if(rel.checked==true){
+                    document.getElementById("d1").innerHTML=ev.target.value
+                    console.log(document.getElementById("d1").innerHTML)
+                }
+            }
+            )
+        }
+    </script>  
+</body>
+</html>

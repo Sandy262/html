@@ -1,0 +1,21 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="radio" name="Gender" value="Male" onchange="getGender(event)">:Male &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="Gender" value="Female" onchange="getGender(event)">:Female &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="Gender" value="Others" onchange="getGender(event)">:Others &nbsp;&nbsp;&nbsp;
+        <!--value ivvakapothe submit chesinappudu value anedi "on" ani velthundi-->
+        <br>
+        <h1 id="d1"></h1>
+        <script>
+            function getGender(ev){
+                var rs = document.getElementsByName("Gender");//tagname gives html list
+                rs.innerHTML=ev.target.value;
+                console.log(rs.innerHTML)
+                document.getElementById("d1").innerHTML=rs.innerHTML
+            }
+        </script>
+    </body>
+</html>

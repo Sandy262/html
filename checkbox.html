@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <input type="checkbox" onchange="showtech(event)" name="technology" value="Javascript">:Javascrcipt 
+  <input type="checkbox" onchange="showtech(event)" name="technology" value="Angular">:Angular 
+  <input type="checkbox" onchange="showtech(event)" name="technology" value="Python">:Python 
+  <input type="checkbox" onchange="showtech(event)" name="technology" value="MongoDB">:MongoDB 
+  <input type="checkbox" onchange="showtech(event)" name="technology" value="NodeJs">:NodeJs 
+  <input type="checkbox" onchange="showtech(event)" name="technology" value="ExpressJs">:ExpressJs
+  <br>
+  <h3 id="d1"></h3> 
+</body>
+<script>
+    var techs=[]
+    function showtech(ev){
+        if(ev.target.checked===true){//ila rayadam valla uncheck chesinappudu add avvadu
+        //document.getElementById("d1").innerHTML+=ev.target.value;//+= ante unnadaniki ev.target.value add avukuntuu pothundi  
+            //ila data anthaa oke daggara thiskonte modify cheyyadam kastam, anduke array thiskovali
+                techs.push(ev.target.value)
+        }
+        else{
+            //select chesina vati nundi unselect chesina techs remove cheyyaali
+            //ippudu ev.target.value lo unselect chesina values ye untaayi
+            techs=techs.filter(function(st){
+                if(st===ev.target.value){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            })
+        }
+        document.getElementById("d1").innerHTML=techs.toString();
+}
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="Gender" value="Male" onchange="getGender(event)">:Male &nbsp;&nbsp;&nbsp;
+    <input type="radio" name="Gender" value="Female" onchange="getGender(event)">:Female &nbsp;&nbsp;&nbsp;
+    <input type="radio" name="Gender" value="Others" onchange="getGender(event)">:Others &nbsp;&nbsp;&nbsp;
+<br>
+    <h1 id="d1"></h1>
+    <img id="d2" src="" alt="">
+    <script>
+        var imgURL="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=600"
+        var imgURL2="https://photographylife.com/wp-content/uploads/2014/06/Nikon-D810-Image-Sample-6.jpg"
+        function getGender(ev){
+            //document.getElementById("d1").innerHTML=document.getElementsByName("gender").value
+            //ila direct html collections nundi node list ki copy cheyyalemu
+            if(ev.target.value==="Others"){document.getElementById("d1").innerHTML=ev.target.value;}//tagname gives html list
+            if(ev.target.value==="Male"){document.getElementById("d2").src=imgURL;}//tagname gives html list
+            if(ev.target.value==="Female"){document.getElementById("d2").src=imgURL2;}//tagname gives html list
+            // INKO METHOD
+            //var rs=document.getElementsByName("Gender")
+            //rs.innerHTML=ev.target.value
+                     }
+    </script>
+</body>
+</html>

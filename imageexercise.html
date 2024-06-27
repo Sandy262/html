@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+        }
+        </style>
+</head>
+<body>
+    <img src="" alt="" id="d1">
+    <input type="radio" name="gender" value="Male" onchange="showImage(Event)">:Male&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="gender" value="Female" onchange="shwImg(Event)">:Female&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="gender" value="Others" onchange="showgender(Event)">:Others&nbsp;&nbsp;&nbsp;
+    <br>
+    <h1 id="d2"></h1>
+    <script>
+        function showImage(ev){
+            var imgURL="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&cs=tinysrgb&w=600"
+            document.getElementById("d1").src=imgURL
+        }
+        function shwImg(ev){
+            var imgURL2="https://photographylife.com/wp-content/uploads/2014/06/Nikon-D810-Image-Sample-6.jpg"
+            document.getElementById("d1").src=imgURL2
+        }
+        //idi 2 functions vaadithe
+        function showgender(ev){
+            if(ev.target.value==="others"){
+                document.getElementById("d2").innerHTML=e.target.value
+            }
+        }
+    </script>
+</body>
+</html>
