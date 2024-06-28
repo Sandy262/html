@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <form onsubmit="ShowData(event)">
+            <!--form always submits data to the server, if we don't give the address, it will submit to itself, and it will clear the form -->
+            <!--manam eppudaina form data ni submit chesthe it will automatically reload the page, that is default nature of form we need to use ev.prevent default method to obstain from this feature-->
+            <input type="text" name="firstName">
+            <br>
+            <input type="text" name="lastName">
+            <br>
+            <input type="text" name="Age">
+            <br>
+            <input type="radio" name="gender" value="Female">Female &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" value="Male">Male &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" value="Others">Others &nbsp;&nbsp;&nbsp;
+            <br>
+            <input type="checkbox" name="tech" value="js">Javascript &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="tech" value="njs">Nodejs &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="tech" value="ajs">Angularjs &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="tech" value="rjs">Reactjs &nbsp;&nbsp;&nbsp;
+            <button>Show Data</button>
+        </form>
+        <br>
+        <br>
+        <ul id="d1">
+
+        </ul>
+        <script>
+            var students=[]
+            function ShowData(ev){
+                ev.preventDefault();// ila raasthe first event submit avvadu, below console lo data kanpisthundi
+                var studentsData={}
+                var fd=new FormData(ev.target)
+                    for(var k of fd.keys()){//we can write logic to remove duplicates inside keys
+                        studentsData[k]=''
+                    }
+                    console.log(studentsData)
+                    for(var k in studentsData){
+                        if(fd.getAll(k).length===1){
+                            studentsData[k]=fd.get(k)
+                        }
+                        else{
+                            studentsData[k]=fd.getAll(k)
+                        }
+                    }
+                    console.log(studentsData)//object
+                    students.push(studentsData)
+                    console.log(students)//array of objects
+                    genList();
+                    ev.target.reset();//to remove the data after submitting by clicking on show data button
+                }
+                function genList(){
+                    document.getElementById("d1").innerHTML=''//document update avvagane table data motham malli raakundaa, just update chesina data matrame table lo enter avvadaniki ee line raasi empty value pass ayyela chustam prathi function call lo first gaa
+                        students.forEach(function(student){//students lo unna prathi okkariki oka row create cheyyaali
+                            var nli=document.createElement("li")
+                            var nameh1=document.createElement("h1")
+                            nameh1.innerHTML=student['firstName']+""+student['lastName']
+                            var ageh2=document.createElement("h2")
+                            ageh2.innerHTML=student['Age']
+                            var genh3=document.createElement("h3")
+                            genh3.innerHTML=student['gender']
+                            var techsb=document.createElement("b")
+                            techsb.innerHTML=student['tech']
+                            nli.appendChild(nameh1)
+                            nli.appendChild(ageh2)
+                            nli.appendChild(genh3)
+                            nli.appendChild(techsb)
+                        
+                            document.getElementById("d1").appendChild(nli)
+                        })
+                    }
+        </script>
+    </body>
+</html>

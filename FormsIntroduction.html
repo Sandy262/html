@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gender" value="Male" onchange="getGen(Event)">Male&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="gender" value="Female" onchange="getGen(Event)">Female&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="gender" value="Others" onchange="getGen(Event)">Others&nbsp;&nbsp;&nbsp;
+    <br>
+    <h1 id="d1"></h1>
+    <script>
+        function getGen(ev){
+            rs=document.getElementsByName("gender");
+            console.log(rs)//deenilo iterator property untundi, kabatti deenini iterate cheyochu
+            rs.forEach(function(rel){
+                if(rel.checked===true){
+                    document.getElementById("d1").innerHTML=rel.value
+                }
+            })
+        }
+        var y=document.getElementsByTagName("input")
+        console.log(y)
+        //deenilo kuda iterator property untundi
+        var ar=[10,20,30]
+        console.log(ar)//iterator
+        var ob1={
+            'firstName':"Sandeep",
+            'lastName':"Kumar",
+            'Age':33
+        }
+        console.dir(ob1)//for in use chesi iterate cheyochu but ikkada iterator property undadu, anduke idi iterator kaadu
+        //okkasari Null vasthe prototype chain aagipoyinatle
+        //this is Just enumerable operator, we can access one value after other, but that is not iterator
+        //html collection, nodelist, array are iterators
+        //formdata is not an array
+        //formdata lo oka technique undi aa technique tho form lo unna data ni access cheyochu
+
+   </script>
+    </body>
+</html>

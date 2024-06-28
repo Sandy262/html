@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <form onsubmit="ShowData(event)">
+            <!--form always submits data to the server, if we don't give the address, it will submit to itself, and it will clear the form -->
+            <!--manam eppudaina form data ni submit chesthe it will automatically reload the page, that is default nature of form we need to use ev.prevent default method to obstain from this feature-->
+            <input type="text" name="firstName">
+            <br>
+            <input type="text" name="LastName">
+            <br>
+            <input type="text" name="Age">
+            <br>
+            <input type="radio" name="gender" value="Female">Female &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" value="Male">Male &nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" value="Others">Others &nbsp;&nbsp;&nbsp;
+            <br>
+            <input type="checkbox" name="tech" value="js">Javascript &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="tech" value="njs">Nodejs &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="tech" value="ajs">Angularjs &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" name="tech" value="rjs">Reactjs &nbsp;&nbsp;&nbsp;
+            <button>Show Data</button>
+        </form>
+        <script>
+            function ShowData(ev){
+                ev.preventDefault();// ila raasthe first event submit avvadu, below console lo data kanpisthundi
+                 var fd=new FormData(ev.target)
+                console.log(fd)//deenilo unna methods ni vaadukonin formdata ni access chesovaali
+                for(var k of fd.entries()){
+                   console.log(k)//fixed set of length value unna array ni tuple antaaru
+                   console.log(fd.get(k[0]))//check box lo first edi check ayyindoo ade vasthundi//ade manam get all vadithe aa values anni oka array lo vasthayi
+                    console.log(fd.getAll(k[0]))//anni values vasthayi but array laaga vasthayi            
+                }
+              }
+        </script>
+    </body>
+</html>
