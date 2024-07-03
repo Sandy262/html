@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar=[5,6,7,8,1,2,5]
+        var br=[5,6,7,8,1,2,5]
+        var [x,y,z] = ar;//array lo unna 1st value x lo save avthundi, 2nd y lo, 3rd z lo, deenine destructuring antaaru
+        document.write(y)//6
+        //let's say y lo 6 kadu 7 raavali ante
+        var [a,,b,c]=br
+        console.log(b)
+        //array destructuring
+        //object destructuring
+        var ob={
+            firstname:'praveen',
+            lastname:'kumar',
+            age:37,
+            address:{
+                pincode:'500055',
+                place:'kphb'
+            }
+        }
+        var {firstname,age,lastname,address:{place}}=ob;// address:{place:pl}//console.log(pl)//sequence follow avvalani kuda ledu
+        //aliasing place inside address
+        console.log(place)
+        var {firstname,age:a,lastname}=ob;//aliasing// duplicate variables
+        document.write(a)//as ane keyword tho kuda aliasing cheskovachu
+        //object destructuring
+        var [a,b,c]=[10,20,30]
+        //swapping of 2 numbers
+        [a,b]=[b,a]
+        //by using array destructuring syntax, we can swap 2 numbers
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar=[12,23,34,45,56]
+        var br=[21,32,43,54,65]
+        //concatenation
+        var cr=[...ar,...br]
+        //var ar=[...ar,...br]//ar lopaliki ar contents, br contents vachestayi, idi concat chese paddathi, concat chesi oke array or object loki pampinchukovachu
+        //expanding one object with other object is nothing but merging of objects ye//same top laagaa
+        document.write(cr)//12,23,34,45,56,21,32,43,54,65
+        var ob1={
+            firstname:'praveen',
+            age:36,
+            food:'pani'
+        }
+        var ob2={
+            place:'kphb',
+            pincode:'500055',
+            food:'puri'
+        }
+        //to merge both objects
+        var ob3={...ob1,...ob2}//ikkada food overwrite ayyi puri matrame vasthundi food lo, ob2 second undi kabatti
+        console.log(ob3)
+        //objects are immutable
+        var xr=[10,20]
+        var a=44;
+        //44 xr lo pettaali ante
+        xr=[...xr,a]//pushing a value
+        xr=[a,...xr]
+    </script>
+</body>
+</html>

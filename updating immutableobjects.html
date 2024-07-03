@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ob1={
+            firstname:'praveen',
+            age:33
+        }
+        ob1.age=20
+        console.log(ob1)//age is 20, can be modifieble
+        //but deenini unmodifieble gaa cheskovalnte freeze cheyyaali
+        Object.freeze(ob1)//ippudu 14th line tho modify avvadu age
+        var ar=[10,20,49]
+        ar[1]=99//annaka kuda 1 index value change avvodu
+        Object.freeze(ar)
+        ar.push(100)//error vasthundi, type error:cannot add property 3, object is not extensible
+        //ila freeze aina objects ni modify cheskovalante oka method undi
+        ar=[...ar,100]//ade re-assign cheskovadam//ila spread operator tho oka temporary variable loki thiskoni modify cheyochu
+        //particular index value change cheyyalante
+        var temp=[...ar]//temp loki kotha array vastadi
+        temp[1]=99
+        ar=[...temp]
+        console.log(ar)//ippudu 99 ar 1 index lo add avthundi, ee vidanga unmodifieble values ni change cheskovachu
+    </script>
+</body>
+</html>

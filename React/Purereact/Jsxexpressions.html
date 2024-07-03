@@ -1,0 +1,43 @@
+<html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!--ippudu react ane object okati create avuthundi, just like document-->
+<style>
+    .reddish{
+        color: indianred;
+    }
+</style>
+</head>
+<body>
+    <h1 style="border: 2px solid red;" class="reddish">This is HTML elements 10+20 {10+20}</h1><!--THROUGH HTML-->
+    <!--expressions evaluate avvavu-->
+    <div id="d1"></div>
+    <div id="root"></div><!--we can write anything apart from root-->
+    <div id="root2"></div>
+    <script type="text/babel">
+        //idi jsx kosam
+        var nh1=document.createElement("h1")
+        //nh1.innerHTML="This is JS h1 element"+(10+20)//javascript elements lo expressions kuda execute avuthayi, ilaa kakunda template literals kuda vaadochu
+        nh1.innerHTML=`This is JS h1 element ${10+20}`
+        nh1.style.border="2px solid lightblue"
+        nh1.className="reddish"
+        document.getElementById("d1").appendChild(nh1)
+        console.log(React)
+        var rh1=React.createElement("h1",{style:{border:"2px solid green"},className:"reddish"},`This is React element ${10+20}`)
+        //React objects ni document objects direct gaa append cheyyaledu anduke next line raasaamu
+        //anduke ReactDOM library thiskuntaamu
+        ReactDOM.render(rh1,document.getElementById("root"))
+
+        var jsh1=<h1 style={{color:"red",border:"2px solid blue"}} className="reddish">This is JSX Element {10+20}</h1>;//declarative syntax for creating dynamic elements//h1 element created by JSX//almost HTML//Deenine declarative syntax antaamu, paina javascript, react lo laaga seperate seperate ga rasthe vaatini imperative syntax antaamu
+        //deenine jsx literal antaaru
+        //ila jsx can evaluate expressions, veetine jsx expressions antaaru
+        //ila jsx dwara oka react element create ayyindi paidaani laaga, by using babel
+        //babel will convert jsx syntax into react syntax
+        //imperative approach lo pratheedi maname cheskovaali, step by step like washing clothes by hand
+        //jsx ki oka library kavali ade babel
+        ReactDOM.render(jsh1,document.getElementById("root2"))
+</script>
+</body>
+</html>

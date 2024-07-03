@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object literal ante constructor function tho kaani, or class thoni kaani create cheyakundaa direct gaa object ni oka value laaga create chesthe daanini object literal antaaru
+        var ob1={
+            firstname:'praveen',
+            lastname,
+            age:30
+        }
+        console.log(ob1)//Reference error:last name is not defined.
+        var lastname
+        var ob1={
+            firstname:'praveen',
+            lastname,
+            age:30
+        }
+        console.log(ob1)//lastname anedi vasthundi ob1 object lo but value anedi undefined gaa untundi//lastname ane oka property create avuthundi
+        var lastname='gubbala'
+        var ob1={
+            firstname:'praveen',
+            lastname,
+            age:30
+        }
+        console.log(ob1)//ikkada ob1 object lo lastname gubbala ani print avuthundi
+        var lastname='gubbala'
+        var contacts=[99343,5588]
+        var ob1={
+            firstname:'praveen',
+            lastname,
+            contacts
+            age:30
+        }
+        console.log(ob1)//contacts anedi 2 values unna array gaa vasthundi
+        var lastname='gubbala'
+        var contacts=[99343,5588]
+        var gender={
+            val:'female'
+        }
+        var ob1={
+            firstname:'praveen',
+            lastname,
+            gender,
+            contacts
+            age:30
+        }
+        console.log(ob1)//gender object lo unna object vasthundi gender:{val:'female'}
+        //ive enhanced object literal, variable peru tho directga petteyadam
+        //redux documentation motham ilaane untundi
+    </script>
+</body>
+</html>

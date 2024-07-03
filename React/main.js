@@ -1,0 +1,3 @@
+import xyz,{ add,sub,mul,div } from "./utils.js";//xyz ane pettaalani em ledu, mydef ani edo oka name ichinaa chaalu// default exports eppuduuu mundu raavali ilaaga, even bracket lo kudaa pttukovaddu 1st matrame raayaali, rendu default exports undakudadu
+console.log(add(10,30))
+console.log(xyz)//console.log(mydef())//idi default export kabatti import cheskunnappudu ye perainaa petkovachu, console lo kuda ye perainaa pettochu

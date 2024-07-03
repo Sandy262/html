@@ -33,7 +33,6 @@
                     for(var k of fd.keys()){//we can write logic to remove duplicates inside keys
                         studentsData[k]=''
                     }
-                    console.log(studentsData)
                     for(var k in studentsData){
                         if(fd.getAll(k).length===1){
                             studentsData[k]=fd.get(k)

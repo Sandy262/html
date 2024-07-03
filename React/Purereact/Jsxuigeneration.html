@@ -1,0 +1,59 @@
+<html>
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!--ippudu react ane object okati create avuthundi, just like document-->
+</style>
+</head>
+<body>
+    <div id="root"></div><!--we can write anything apart from root-->
+    <div id="root2"></div>
+    <script type="text/babel">
+        var students=['deepika','samantha','anushka','thrisha']
+        var sli=<ul>{students.map((s)=>{return <li>{s}</li>})}</ul>
+        //functioncall is also an expression
+        //map returns an array, array of students ni return chesthundi
+       ReactDOM.render(sli,document.getElementById("root"))
+       var employees=[
+       {
+        name:'rahul reddy',
+        age:34,
+        gender:'male'
+       },
+       {
+        name:'rahul reddy',
+        age:34,
+        gender:'male'
+       },
+       {
+        name:'rahul reddy',
+        age:34,
+        gender:'male'
+       }
+    ]
+       //we can display them in table
+       //table generation
+       var etable=<table width="50%" align="center" border='2'>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>age</th>
+                    <th>gender</th>
+                    </tr>
+            </thead>
+            <tbody>{
+                employees.map((e)=>{
+                    return <tr>
+                        <td>{e.name}</td>
+                        <td>{e.age}</td>
+                        <td>{e.gender}</td>
+                        </tr>
+                })
+            }
+                </tbody>
+        </table>
+        ReactDOM.render(etable,document.getElementById("root2"))
+       </script>
+</body>
+</html>
