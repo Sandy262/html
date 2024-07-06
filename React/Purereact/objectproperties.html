@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var ob1={
+                firstname:'sandeep',
+                lastname:'kumar',
+                age:33,
+                dob:'13/07/1991'
+            }
+            var jsh1=<div>
+                <h1>firstname:{ob1.firstname}</h1>
+                <h1>lastname:{ob1.lastname}</h1>
+                <h1>age:{ob1.age}</h1>
+                <h1>dob:{ob1.dob}</h1>
+                </div>
+            ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+    </body>
+</html>

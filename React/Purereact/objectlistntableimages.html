@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <div id="root2"></div>
+        <div id="root3"></div>
+        <script type="text/babel">
+            var male="https://th.bing.com/th/id/R.0d114fd93bcc7d29cb019e09f472e842?rik=V1250X8jd62SDQ&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f1061%2f1924%2fproducts%2f48_grande.png%3fv%3d1571606117&ehk=wI77IAGmgTgLSbWch9C%2bJ3n9CMVIAXh0E8wefEN5U6o%3d&risl=&pid=ImgRaw&r=0"
+            var female="https://th.bing.com/th/id/R.6e9bdcfcb3c94098133e5c8aa8751ee9?rik=2TS4j6YDgLDHgg&riu=http%3a%2f%2ficons.iconarchive.com%2ficons%2fgoogle%2fnoto-emoji-people-face%2f1024%2f10140-girl-icon.png&ehk=WIyZu9W%2buKtENO4XG%2f3VKTmZ%2fjyyLOInOBckZnEq0aY%3d&risl=&pid=ImgRaw&r=0"
+            var ob1=[{
+                firstname:'sandeep',
+                lastname:'kumar',
+                age:33,
+                gender:'male',
+                dob:'13/07/1991'
+            },
+            {
+            firstname:'sandeep',
+                lastname:'kumar',
+                age:33,
+                gender:'female',
+                dob:'13/07/1991'
+            },
+            {
+            firstname:'sandeep',
+                lastname:'kumar',
+                age:33,
+                gender:'male',
+                dob:'13/07/1991'
+            }
+        ]
+            var jsh1=<div>
+                {ob1.map((a)=>{return <ul>
+                    <li>{a.firstname}</li>
+                    <li>{a.lastname}</li>
+                    <li>{a.age}</li>
+                    <li>{a.dob}</li>
+                </ul>
+                })}
+                </div>
+            var jsh2=<table border="2">
+                {
+                    ob1.map((a)=>{
+                        return <tr>
+                    <td>{a.firstname}</td>
+                    <td>{a.lastname}</td>
+                    <td>{a.age}</td>
+                    <td>{a.dob}</td>
+                    <td>{a.gender==='female'?<img src={female} width="100px"/>:<img src={male} width="100px"/>}</td> 
+                            </tr>
+                    })
+                }
+                </table>
+            var jsh3=<div>{ob1.map((a)=>{return <div style={{border:"2px solid black", padding:"10px", margin:"10px", width:"400px"}}>
+                <div>{a.firstname}</div>
+                <div>{a.lastname}</div>
+                <div>{a.age}</div>
+                <div>{a.dob}</div>
+                <div>{a.gender==='female'?<img src={female} width="100px"/>:<img src={male} width="100px" />}</div>
+            </div>})}</div>
+            ReactDOM.render(jsh1,document.getElementById("root"))
+            ReactDOM.render(jsh2,document.getElementById("root2"))
+            ReactDOM.render(jsh3,document.getElementById("root3"))
+        </script>
+    </body>
+</html>

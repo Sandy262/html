@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <div id="root2"></div>
+        <script type="text/babel">
+            var students=['sandeep','sanjay','kumar','jogender','babu']
+            var employees=[
+                {
+                    Name:'sandeep kumar',
+                    Age:33,
+                    Gender:'male'
+                },
+                {
+                    Name:'sanjay kumar',
+                    Age:31,
+                    Gender:'male'
+                },
+                {
+                    Name:'Amaravathi',
+                    Age:50,
+                    Gender:'female'
+                }
+            ]
+            var jli=<ul>{students.map((s)=>{return<li>{s}</li>})}</ul>
+            ReactDOM.render(jli,document.getElementById("root"))
+            var etable=<table width="50%" align="center" border='2'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        </tr>
+                    </thead>
+                        <tbody>{
+                            employees.map((e)=>{
+                               return <tr>
+                                <td>{e.Name}</td>
+                                <td>{e.Age}</td>
+                                <td>{e.Gender}</td>
+                                </tr>
+                            })
+                        }</tbody>
+            </table>
+            ReactDOM.render(etable,document.getElementById("root2"))
+        </script>
+    </body>
+</html>

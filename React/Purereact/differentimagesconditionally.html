@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var a=+prompt()
+            var img1src="https://images.indianexpress.com/2024/07/Jay-Shah-and-Rahul-Dravid.jpg?w=640"
+            var img12src="https://indianexpress.com/wp-content/uploads/2024/06/rahul_a506a3.jpg"
+            var jsh1=<h1>{a%2?<img src={img1src}/>:<img src={img12src}/>}</h1>
+            ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+    </body>
+</html>

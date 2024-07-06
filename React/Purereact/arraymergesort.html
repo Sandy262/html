@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var a=[7,6,9,2,67,4,5,8,1,10]
+            var b=[12,13,23,2,4,3,5,35,67,78,89,92]
+            var jsh1=<ul>{[...a,...b].sort((a,b)=>a>b?1:-1).map((a)=><li>{a}</li>)}</ul>
+            ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+    </body>
+</html>
