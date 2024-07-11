@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+    <form name="empform" onsubmit="addEmployee(event)">
+        <input type="text" name="Name" placeholder="Enter Your Name here" style="align-content: center;">
+        <br>
+        <input type="text" name="Age" placeholder="Enter Your Age here" style="align-content: center;">
+        <br>
+        <input type="radio" name="gender" value="male">Male&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" value="female">Female&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" value="others">Others&nbsp;&nbsp;&nbsp;
+        <button>Submit Data</button>
+    </form>
+    <button onclick="sortBya()">SortByAge</button>
+        <div id="root"></div>
+        <script type="text/babel">
+            var students = [
+            {
+        Name:'rahul reddy',
+        Age:34,
+        Gender:'male'
+       },
+       {
+        Name:'Sandeep Kumar',
+        Age:32,
+        Gender:'male'
+       },
+       {
+        Name:'Aishwarya roy',
+        Age:30,
+        Gender:'female'
+       }
+            ]
+            function addEmployee(e){
+
+            }
+            function DeleteRow(i){
+                students.splice(i,1)
+                ReactDOM.render(genTable(),document.getElementById("root"))
+            }
+            function sortBy(){
+                employees.sort((a,b)=>{return a.key>b.key?1:-1})
+                // employees.sort(function(a,b){
+                //     if(a.Key>b.Key){
+                //         return 1
+                //     }
+                //     else{
+                //         return -1
+                //     }
+                // })
+                genTable();
+            }
+            function genTable(){
+                var jsh1=<table  width="50%" align="center" border="2px">
+                <thead>
+                    <th onclick="sortBy('Name')">Name</th>
+                    <th onvlick="sortBy('Age')">Age</th>
+                    <th onclick="sortBy('Gender')">Gender</th>
+                    <th>Action</th>
+                </thead> 
+                <tbody> 
+                    {
+                        students.map((a)=>{ 
+                            return <tr>
+                                <td width="50%" align="center">{a.Name}</td>
+                                <td width="50%" align="center">{a.Age}</td>
+                                <td width="50%" align="center">{a.Gender}</td>
+                                <td width="50%" align="center"><button onClick={()=>{DeleteRow(event)}}>Delete</button></td>
+                            </tr>
+                        })
+                    }
+                </tbody>
+                </table>
+                return jsh1;
+            }
+            
+            ReactDOM.render(genTable(),document.getElementById("root"))
+        </script>
+    </body>
+</html>

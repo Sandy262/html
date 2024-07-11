@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">            
+            function Parent(){
+                console.log("parent rendered")
+                var [x,setx]=React.useState(10)
+                var [y,sety]=React.useState()
+                function abc(){
+                    alert("Hello, this is parent")
+                }
+                function pqr(ch){
+                    sety(ch)
+                }
+                return(
+                    <div style={{border:"2px solid",margin:"10px",padding:"10px"}}>
+                        <h1>Parent lo:{x}</h1>
+                        <h2>Child lo:{y}</h2>
+                        <Child x={x} abc={abc} pqr={pqr}></Child>
+                    </div>
+                )
+            }
+            function Child(props){
+                console.log("child rendered")
+                var [p,setp]=React.useState(111)
+                var [c,setc]=React.useState(1)
+                React.useEffect(()=>{console.log("UseEffect with dep array")},[])
+                React.useEffect(()=>{console.log("UseEffect without dep array")})
+                return(
+                    <div style={{border:"2px solid",margin:"10px",padding:"10px"}}>
+                    <div style={{border:"2px solid",margin:"10px",padding:"10px"}}>
+                        <h1>Child lopala:{c}</h1>
+                        <button onClick={()=>{setc(c+1)}}>Increment</button>
+                        <button onClick={()=>{setc(c-1)}}>Decrement</button>
+                        </div>
+                        <h2>Child lo:{props.x}</h2>
+                        <button onClick={props.abc}>Click here</button>
+                        <button onClick={props.pqr(p)}>Send Data to parent</button>
+                        </div>
+                )
+            }
+            ReactDOM.render(<Parent></Parent>,document.getElementById("root"))
+        </script>
+    </body>
+</html>

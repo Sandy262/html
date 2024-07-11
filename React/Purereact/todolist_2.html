@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var Tdl=function ToDoList(){
+                var [todo,settodo]=React.useState([{title:'brinjal',status:false},{title:'cucumber', status:true},{title:'onions',status:false},{title:'potato',status:false}])
+                function addToDo(){
+                    var x=document.getElementById("d1").value
+                    settodo([...todo,{title:x,status:false}])
+                }
+                function deleteToDo(ind){
+                    var temp=[...todo]
+                    temp.splice(ind,1);
+                    settodo([...temp])
+                }
+                return(
+                    <div>
+                <input type="text" id="d1"/>
+                <button onClick={()=>{addToDo(event)}}>Add Data</button>
+                <ul>{
+                    todo.map((todo,i)=><li style={todo.status?{textDecoration:'line-through'}:{}}>{todo.title}<button onClick={()=>{}}>Done</button><button onClick={()=>{deleteToDo(i)}}>Delete</button></li>)
+                }
+                    </ul>
+            </div>
+        )
+            }
+            ReactDOM.render(<Tdl />,document.getElementById("root"))
+        </script>
+    </body>
+</html>

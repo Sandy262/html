@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <form name="employeeform" onclick="addEmployee(event)">
+            <input type="text" name="firstname" placeholder="Enter your First Name here" style="align-content: center;" onkeyup="handleInput(event)"><br>
+            <input type="text" name="lastname" placeholder="Enter your Last Name here" style="align-content: center;" onkeyup="handleInput(event)"><br>
+            <input type="radio" name="gender" value="male">Male&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="gender" value="female">Female&nbsp;&nbsp;&nbsp;<br>
+            <input type="text" name="age" placeholder="Enter your Age here" style="align-content: center;" onkeyup="handleInput(event)"><br>
+            <button>Add Employee</button>
+        </form>
+        <button onclick="sortBy('age')">SortByAge</button>
+        <div id="root"></div>
+        <script type="text/babel">
+            class Student{
+                firstname;
+                lastname;
+                gender;
+                age;
+                constructor(fn,ln,gender,age){
+                    this.firstname=fn;
+                    this.lastname=ln;
+                    this.gender=gender;
+                    this.age=age;
+                }
+            }
+            var newStudent = new Student();
+            function handleInput(e){
+                newStudent[e.target.name] = e.target.value
+            }
+
+            var students=[
+                {
+                firstname:"Sandeep",
+                lastname:"Kumar",
+                gender:'male',
+                age:33
+                },
+                {
+                firstname:"Sanjay",
+                lastname:"Davis",
+                gender:'male',
+                age:31
+                },
+                {
+                firstname:"Jogender",
+                lastname:"Babu",
+                gender:'male',
+                age:58
+                },
+                {
+                firstname:"Amaravathi",
+                lastname:"Gopalan",
+                gender:'female',
+                age:50
+                }
+            ]
+            genTable();
+            function addEmployee(i){
+                i.preventDefault();
+                students.push(newStudent);
+                genTable();
+            }
+            function sortBy(key){
+                students.sort((a,b)=>{return a[key]>b[key]?1:-1})
+                console.log(students)
+                genTable();
+            }
+            function DeleteRow(i){
+                students.splice(i,1)
+                genTable();
+            }
+            function genTable(){
+            var jsh1=<div><table border="2px">
+                <thead>{
+                <tr>
+                    <th onClick={()=>{sortBy('firstname')}}>Firstname</th>
+                    <th onClick={()=>{sortBy('lastname')}}>Lastname</th>
+                    <th onClick={()=>{sortBy('gender')}}>Gender</th>
+                    <th onClick={()=>{sortBy('age')}}>Age</th>
+                    <th>Deletion</th>
+                    <th>Edit</th>
+                    </tr>
+                }
+                    </thead>
+                    <tbody>{
+                        students.map((a)=>{
+                            return<tr>
+                            <td>{a.firstname}</td>
+                            <td>{a.lastname}</td>
+                            <td>{a.gender}</td>
+                            <td>{a.age}</td>
+                            <td><button onClick={(a)=>{DeleteRow(a)}}>Delete</button></td>
+                            <td><button>Edit</button></td>
+                            </tr>
+                        })
+                    }
+                            </tbody>
+                </table>
+            </div>
+            ReactDOM.render(jsh1,document.getElementById("root"))}
+        </script>
+    </body>
+</html>

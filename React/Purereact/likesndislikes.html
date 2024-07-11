@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var count=0
+            function count1(){
+                count++
+                document.getElementById("d1").innerHTML=count
+            }
+            var mount=0
+            function mount1(){
+                mount++
+                document.getElementById("d2").innerHTML=mount
+            }
+            var jsh1=<div><button onClick={count1}>Likes</button><b id="d1">{count}</b><button onClick={mount1}>Dislikes</button><b id="d2">{mount}</b></div>
+        ReactDOM.render(jsh1,document.getElementById("root"))
+        </script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var students=[
+                {
+                firstname:"Sandeep",
+                lastname:"Kumar",
+                gender:'male',
+                age:33
+                },
+                {
+                firstname:"Sanjay",
+                lastname:"Davis",
+                gender:'male',
+                age:31
+                },
+                {
+                firstname:"Jogender",
+                lastname:"Babu",
+                gender:'male',
+                age:58
+                },
+                {
+                firstname:"Amaravathi",
+                lastname:"Gopalan",
+                gender:'female',
+                age:50
+                }
+            ]
+            var x='royalblue'
+            genTable();
+            function deleteRow(i){
+                students.splice(i,1)
+                genTable()
+            }
+            function sortBy(i){
+                students.sort((a,b)=>{return a[i]>b[i]?1:-1})
+            genTable();
+            }
+            function genTable(){
+                var jsh1=<table border="2px">
+                    <thead>{
+                        <tr>
+                            <th onClick={()=>sortBy('firstname')}>FirstName</th>
+                            <th onClick={()=>sortBy('lastname')}>LastName</th>
+                            <th onClick={()=>sortBy('gender')}>Gender</th>
+                            <th onClick={()=>sortBy('age')}>Age</th>
+                            <th>Delete</th>
+                            </tr>
+                    }
+                    </thead>
+                    <tbody>{
+                        students.map((a)=>{
+                            return<tr style={a.gender==='male'?{backgroundColor:"lightpink"}:{backgroundColor:x}}>
+                            <td>{a.firstname}</td>
+                            <td>{a.lastname}</td>
+                            <td>{a.gender}</td>
+                            <td>{a.age}</td>
+                            <td><button onClick={deleteRow}>Delete</button></td>
+                            </tr>
+                        })
+                    }
+                            </tbody>
+                    </table>
+                ReactDOM.render(jsh1,document.getElementById("root"))
+            }
+        </script>
+    </body>
+</html>

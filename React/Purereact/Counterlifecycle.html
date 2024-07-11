@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            function Counter(){
+                console.log("Counter Component Rendered")
+                var [c,setc]=React.useState(10)
+                React.useEffect(function(){
+                    console.log("Use effect with empty dependency array")
+                },[])
+                React.useEffect(function(){
+                    console.log("Use effect without(no) dependency array")
+                })
+                {
+                    //ikkada component motham rerender avthundi except state variable, once state update avvagaane, page refresh chesinappude state variable refresh avuthundi, component state update chesina prathi saari component motham rerender avuthundi except state variable, akariki functions,button,divisions annii malli re render avuthaayi
+                }
+                function inc(){
+                    setc(c+1)
+                }
+                function dec(){
+                    setc(c-1)
+                    {
+                    //setc((c)=>{return (c-props.step)})  ilaa kuda raskovachu  
+                    }
+                }
+                function reset(){
+                    setc(0)
+                }
+                return <div style={{border:"2px solid blue", padding:"5px", margin:"8px"}}>
+                    {console.log("inside jsx")}
+                    <h1>Count:{c}</h1>
+                    <button onClick={()=>{inc()}}>Increment</button>
+                    <button onClick={()=>{dec()}}>decrement</button>
+                    <button onClick={()=>{reset()}}>reset</button>
+                    </div>
+            }
+            ReactDOM.render(<Counter></Counter>,document.getElementById("root"))
+        </script>
+    </body>
+</html>

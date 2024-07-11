@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <div style="display:flex;width:100%;height:100%;justify-content:center">
+			<div style="align-self: center">
+				<span onClick={rate(1)}>&#9734;</span>
+				<span onClick={rate(2)}>&#9734;</span>
+				<span onClick={rate(3)}>&#9734;</span>
+				<span onClick={rate(4)}>&#9734;</span>
+				<span onClick={rate(5)}>&#9734;</span>
+				<h1>Rating:<div id="d2">0/5</div></h1>
+			</div>
+		</div>
+        <script type="text/babel">
+            var allspans=document.getElementsByTagName('span');
+            function rate(r){
+                document.getElementById("d2").innerHTML=r+"/5";
+                for(var i=0;i<=4;i++){
+                    allspans[i].innerHTML="&#9734;"
+                }
+                for(var i=0;i<=r-1;i++){
+                    allspans[i].innerHTML="&#9733;"
+                }
+            }
+        </script>
+    </body>
+</html>
